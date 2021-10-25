@@ -53,6 +53,23 @@ public class RealEstate {
     @JsonProperty
     String listing;
 
+    @JsonProperty
+    int price = 0;
+
+    @JsonProperty
+    String phone = "";
+
+    @JsonProperty
+    String imageurl = "";
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
     }

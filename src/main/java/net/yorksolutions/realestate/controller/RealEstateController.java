@@ -61,4 +61,7 @@ public class RealEstateController {
 
         return objectMapper.writeValueAsString(realEstateList);
     }
+
+//    @GetMapping("/price")
+//    String searchRealEstateByPrice(@RequestParam)
 }
