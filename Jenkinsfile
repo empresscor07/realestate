@@ -9,7 +9,18 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                //only create the package don't install on docker img
             }
         }
+        stage('Test') {
+                    steps {
+                        sh 'mvn test'
+                    }
+                    post {
+                        always {
+                            junit 'target/surefire-reports/*.xml'
+                        }
+                    }
+                }
     }
 }
